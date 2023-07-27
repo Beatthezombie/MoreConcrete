@@ -5,13 +5,13 @@ issueTrackerURL="https://github.com/Autovw/MoreConcrete/issues"
 
 [[mods]]
 modId="moreconcrete"
-version="1.4.6"
-displayName="More Concrete"
+version="1.20.1"
+displayName="More Concrete Extended"
 updateJSONURL="https://raw.githubusercontent.com/Autovw/ModUpdates/main/moreconcrete/update.json"
 displayURL="https://github.com/Autovw/MoreConcrete/wiki"
 logoFile="more_concrete_banner.png"
 #credits=""
-authors="Autovw"
+authors="Autovw, BeattheZombie"
 description='''
 A simple mod that adds more concrete variants into Minecraft!
 '''
