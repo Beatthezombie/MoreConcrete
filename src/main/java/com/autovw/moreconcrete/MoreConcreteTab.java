@@ -24,7 +24,7 @@ public class MoreConcreteTab {
             ModBlocks.BLOCKS.getEntries().stream().map(RegistryObject::get).filter(predicate -> {
                 return predicate instanceof SlabBlock || predicate instanceof StairBlock ||
                         predicate instanceof WallBlock || predicate instanceof FenceGateBlock || 
-                        predicate instanceof FenceBlock ;
+                        predicate instanceof FenceBlock || predicate instanceof LadderBlock ;
             }).forEach(event::accept);
         }
 

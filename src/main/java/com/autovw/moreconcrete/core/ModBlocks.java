@@ -164,6 +164,24 @@ public class ModBlocks {
     public static final RegistryObject<Block> PURPLE_CONCRETE_BUTTON = registerButton(Blocks.PURPLE_CONCRETE);
     public static final RegistryObject<Block> MAGENTA_CONCRETE_BUTTON = registerButton(Blocks.MAGENTA_CONCRETE);
     public static final RegistryObject<Block> PINK_CONCRETE_BUTTON = registerButton(Blocks.PINK_CONCRETE);
+    
+    // Ladders
+    public static final RegistryObject<Block> WHITE_CONCRETE_LADDER = registerLadder(Blocks.WHITE_CONCRETE);
+    public static final RegistryObject<Block> LIGHT_GRAY_CONCRETE_LADDER = registerLadder(Blocks.LIGHT_GRAY_CONCRETE);
+    public static final RegistryObject<Block> GRAY_CONCRETE_LADDER = registerLadder(Blocks.GRAY_CONCRETE);
+    public static final RegistryObject<Block> BLACK_CONCRETE_LADDER = registerLadder(Blocks.BLACK_CONCRETE);
+    public static final RegistryObject<Block> BROWN_CONCRETE_LADDER = registerLadder(Blocks.BROWN_CONCRETE);
+    public static final RegistryObject<Block> RED_CONCRETE_LADDER = registerLadder(Blocks.RED_CONCRETE);
+    public static final RegistryObject<Block> ORANGE_CONCRETE_LADDER = registerLadder(Blocks.ORANGE_CONCRETE);
+    public static final RegistryObject<Block> YELLOW_CONCRETE_LADDER = registerLadder(Blocks.YELLOW_CONCRETE);
+    public static final RegistryObject<Block> LIME_CONCRETE_LADDER = registerLadder(Blocks.LIME_CONCRETE);
+    public static final RegistryObject<Block> GREEN_CONCRETE_LADDER = registerLadder(Blocks.GREEN_CONCRETE);
+    public static final RegistryObject<Block> CYAN_CONCRETE_LADDER = registerLadder(Blocks.CYAN_CONCRETE);
+    public static final RegistryObject<Block> LIGHT_BLUE_CONCRETE_LADDER = registerLadder(Blocks.LIGHT_BLUE_CONCRETE);
+    public static final RegistryObject<Block> BLUE_CONCRETE_LADDER = registerLadder(Blocks.BLUE_CONCRETE);
+    public static final RegistryObject<Block> PURPLE_CONCRETE_LADDER = registerLadder(Blocks.PURPLE_CONCRETE);
+    public static final RegistryObject<Block> MAGENTA_CONCRETE_LADDER = registerLadder(Blocks.MAGENTA_CONCRETE);
+    public static final RegistryObject<Block> PINK_CONCRETE_LADDER = registerLadder(Blocks.PINK_CONCRETE);
 
 
     /* ================== Registry helper methods ================== */
@@ -218,5 +236,9 @@ public class ModBlocks {
     private static RegistryObject<Block> registerButton(Block parent) {
         BlockBehaviour.Properties properties = BlockBehaviour.Properties.of().noCollission().strength(0.5f).sound(SoundType.STONE);
         return createRegistry(parent, "button", () -> new ButtonBlock(properties, BlockSetType.STONE, 20, false), new Item.Properties());
+    }
+    
+    private static RegistryObject<Block> registerLadder(Block parent) {
+    	return createRegistry(parent, "ladder", () -> new LadderBlock(BlockBehaviour.Properties.copy(Blocks.LADDER).sound(SoundType.METAL) ), new Item.Properties());
     }
 }

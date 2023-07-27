@@ -223,6 +223,26 @@ public class ModRecipeProvider extends RecipeProvider {
         concreteButton(consumer, ModBlocks.GREEN_CONCRETE_BUTTON.get(), Blocks.GREEN_CONCRETE);
         concreteButton(consumer, ModBlocks.RED_CONCRETE_BUTTON.get(), Blocks.RED_CONCRETE);
         concreteButton(consumer, ModBlocks.BLACK_CONCRETE_BUTTON.get(), Blocks.BLACK_CONCRETE);
+        
+
+        // Ladders
+        concreteLadder(consumer, ModBlocks.WHITE_CONCRETE_LADDER.get(), Blocks.WHITE_CONCRETE);
+        concreteLadder(consumer, ModBlocks.ORANGE_CONCRETE_LADDER.get(), Blocks.ORANGE_CONCRETE);
+        concreteLadder(consumer, ModBlocks.MAGENTA_CONCRETE_LADDER.get(), Blocks.MAGENTA_CONCRETE);
+        concreteLadder(consumer, ModBlocks.LIGHT_BLUE_CONCRETE_LADDER.get(), Blocks.LIGHT_BLUE_CONCRETE);
+        concreteLadder(consumer, ModBlocks.YELLOW_CONCRETE_LADDER.get(), Blocks.YELLOW_CONCRETE);
+        concreteLadder(consumer, ModBlocks.LIME_CONCRETE_LADDER.get(), Blocks.LIME_CONCRETE);
+        concreteLadder(consumer, ModBlocks.PINK_CONCRETE_LADDER.get(), Blocks.PINK_CONCRETE);
+        concreteLadder(consumer, ModBlocks.GRAY_CONCRETE_LADDER.get(), Blocks.GRAY_CONCRETE);
+        concreteLadder(consumer, ModBlocks.LIGHT_GRAY_CONCRETE_LADDER.get(), Blocks.LIGHT_GRAY_CONCRETE);
+        concreteLadder(consumer, ModBlocks.CYAN_CONCRETE_LADDER.get(), Blocks.CYAN_CONCRETE);
+        concreteLadder(consumer, ModBlocks.PURPLE_CONCRETE_LADDER.get(), Blocks.PURPLE_CONCRETE);
+        concreteLadder(consumer, ModBlocks.BLUE_CONCRETE_LADDER.get(), Blocks.BLUE_CONCRETE);
+        concreteLadder(consumer, ModBlocks.BROWN_CONCRETE_LADDER.get(), Blocks.BROWN_CONCRETE);
+        concreteLadder(consumer, ModBlocks.GREEN_CONCRETE_LADDER.get(), Blocks.GREEN_CONCRETE);
+        concreteLadder(consumer, ModBlocks.RED_CONCRETE_LADDER.get(), Blocks.RED_CONCRETE);
+        concreteLadder(consumer, ModBlocks.BLACK_CONCRETE_LADDER.get(), Blocks.BLACK_CONCRETE);      
+        
     }
 
     private static void concreteSlab(Consumer<FinishedRecipe> recipeConsumer, ItemLike slab, ItemLike ingredient) {
@@ -314,5 +334,16 @@ public class ModRecipeProvider extends RecipeProvider {
                 .save(recipeConsumer);
 
         stonecutting(recipeConsumer, button, Ingredient.of(ingredient), 1, ingredient);
+    }
+    
+    private static void concreteLadder(Consumer<FinishedRecipe> recipeConsumer, ItemLike fenceGate, ItemLike ingredient) {
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, fenceGate, 1)
+                .define('X', ingredient)
+                .pattern("X X")
+                .pattern("XXX")
+                .pattern("X X")
+                .group("concrete_ladder")
+                .unlockedBy("has_concrete", has(ingredient))
+                .save(recipeConsumer);
     }
 }

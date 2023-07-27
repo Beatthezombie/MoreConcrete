@@ -14,6 +14,10 @@ import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.LadderBlock;
+
+
 import java.util.Objects;
 
 /**
@@ -57,6 +61,10 @@ public class ModBlockStatesProvider extends BlockStateProvider {
         ModBlocks.BLOCKS.getEntries().stream().map(RegistryObject::get)
                 .filter(predicate -> predicate instanceof ButtonBlock)
                 .forEach(this::buttonBlock);
+        
+        ModBlocks.BLOCKS.getEntries().stream().map(RegistryObject::get)
+        		.filter(predicate -> predicate instanceof LadderBlock)
+        		.forEach(this::ladderBlock);
     }
 
     public void slabBlock(Block slab) {
@@ -194,5 +202,26 @@ public class ModBlockStatesProvider extends BlockStateProvider {
         }));
 
         itemModels().withExistingParent(path, buttonModelInventory.getLocation()); // item model
+    }
+    
+    public void ladderBlock(Block ladder) {
+        String path = Objects.requireNonNull(ForgeRegistries.BLOCKS.getKey(ladder)).getPath();
+        String parent = path.replace("_ladder", "");
+        ResourceLocation texture = mcLoc("block/" + parent);
+        // Creates lever_model model file
+        BlockModelBuilder ladderModel = models().withExistingParent(path, new ResourceLocation(MoreConcrete.MODID, "block/ladder_model")).texture("o", texture).texture("particle", texture);
+
+
+        getVariantBuilder(ladder).forAllStates(blockState -> {
+            Direction facing = blockState.getValue(LadderBlock.FACING);
+
+            return ConfiguredModel.builder()
+                    .modelFile(ladderModel)
+                    .rotationY( facing == Direction.NORTH ? 0 : facing == Direction.SOUTH ? 180 : facing == Direction.EAST ? 90 : 270 )
+                    .build();
+        });
+
+        // item model
+        itemModels().withExistingParent(path, new ResourceLocation(ForgeRegistries.BLOCKS.getKey(ladder).getNamespace(), "block/" + path));
     }
 }

@@ -1,0 +1,7 @@
+{
+  "parent": "moreconcrete:block/ladder_model",
+  "textures": {
+    "o": "minecraft:block/purple_concrete",
+    "particle": "minecraft:block/purple_concrete"
+  }
+}

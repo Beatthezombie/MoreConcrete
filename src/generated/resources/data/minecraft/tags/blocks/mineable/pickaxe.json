@@ -6,6 +6,7 @@
     "#moreconcrete:pressure_plates",
     "#moreconcrete:fences",
     "#moreconcrete:fence_gates",
-    "#moreconcrete:buttons"
+    "#moreconcrete:buttons",
+    "#moreconcrete:ladders"
   ]
 }

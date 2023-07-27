@@ -188,5 +188,26 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                 .add(ModBlocks.BLACK_CONCRETE_BUTTON.get());
         tag(BlockTags.MINEABLE_WITH_PICKAXE).addTag(ModTags.MOD_BUTTONS);
         tag(BlockTags.BUTTONS).addTag(ModTags.MOD_BUTTONS);
+        
+        // Ladders
+        tag(ModTags.MOD_LADDERS)
+                .add(ModBlocks.WHITE_CONCRETE_LADDER.get())
+                .add(ModBlocks.ORANGE_CONCRETE_LADDER.get())
+                .add(ModBlocks.MAGENTA_CONCRETE_LADDER.get())
+                .add(ModBlocks.LIGHT_BLUE_CONCRETE_LADDER.get())
+                .add(ModBlocks.YELLOW_CONCRETE_LADDER.get())
+                .add(ModBlocks.LIME_CONCRETE_LADDER.get())
+                .add(ModBlocks.PINK_CONCRETE_LADDER.get())
+                .add(ModBlocks.GRAY_CONCRETE_LADDER.get())
+                .add(ModBlocks.LIGHT_GRAY_CONCRETE_LADDER.get())
+                .add(ModBlocks.CYAN_CONCRETE_LADDER.get())
+                .add(ModBlocks.PURPLE_CONCRETE_LADDER.get())
+                .add(ModBlocks.BLUE_CONCRETE_LADDER.get())
+                .add(ModBlocks.BROWN_CONCRETE_LADDER.get())
+                .add(ModBlocks.GREEN_CONCRETE_LADDER.get())
+                .add(ModBlocks.RED_CONCRETE_LADDER.get())
+                .add(ModBlocks.BLACK_CONCRETE_LADDER.get());
+        tag(BlockTags.MINEABLE_WITH_PICKAXE).addTag(ModTags.MOD_LADDERS);
+        tag(BlockTags.CLIMBABLE).addTag(ModTags.MOD_LADDERS);
     }
 }

@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "concrete_ladder",
+  "key": {
+    "X": {
+      "item": "minecraft:lime_concrete"
+    }
+  },
+  "pattern": [
+    "X X",
+    "XXX",
+    "X X"
+  ],
+  "result": {
+    "item": "moreconcrete:lime_concrete_ladder"
+  },
+  "show_notification": true
+}
