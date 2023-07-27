@@ -3,6 +3,6 @@
   "textures": {
     "particle": "#base",
     "base": "#base",
-    "lever": "minecraft:block/lever"
+    "lever": "minecraft:block/light_gray_concrete"
   }
 }
