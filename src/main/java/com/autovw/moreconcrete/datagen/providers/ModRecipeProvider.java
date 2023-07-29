@@ -337,7 +337,7 @@ public class ModRecipeProvider extends RecipeProvider {
     }
     
     private static void concreteLadder(Consumer<FinishedRecipe> recipeConsumer, ItemLike fenceGate, ItemLike ingredient) {
-        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, fenceGate, 1)
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, fenceGate, 6)
                 .define('X', ingredient)
                 .pattern("X X")
                 .pattern("XXX")
