@@ -241,7 +241,28 @@ public class ModRecipeProvider extends RecipeProvider {
         concreteLadder(consumer, ModBlocks.BROWN_CONCRETE_LADDER.get(), Blocks.BROWN_CONCRETE);
         concreteLadder(consumer, ModBlocks.GREEN_CONCRETE_LADDER.get(), Blocks.GREEN_CONCRETE);
         concreteLadder(consumer, ModBlocks.RED_CONCRETE_LADDER.get(), Blocks.RED_CONCRETE);
-        concreteLadder(consumer, ModBlocks.BLACK_CONCRETE_LADDER.get(), Blocks.BLACK_CONCRETE);      
+        concreteLadder(consumer, ModBlocks.BLACK_CONCRETE_LADDER.get(), Blocks.BLACK_CONCRETE);    
+        
+        
+        // Concrete mixing
+        concreteMix(consumer, Blocks.WHITE_CONCRETE, Blocks.WHITE_CONCRETE_POWDER);
+        concreteMix(consumer, Blocks.ORANGE_CONCRETE, Blocks.ORANGE_CONCRETE_POWDER);
+        concreteMix(consumer, Blocks.MAGENTA_CONCRETE, Blocks.MAGENTA_CONCRETE_POWDER);
+        concreteMix(consumer, Blocks.LIGHT_BLUE_CONCRETE, Blocks.LIGHT_BLUE_CONCRETE_POWDER);
+        concreteMix(consumer, Blocks.YELLOW_CONCRETE, Blocks.YELLOW_CONCRETE_POWDER);
+        concreteMix(consumer, Blocks.LIME_CONCRETE, Blocks.LIME_CONCRETE_POWDER);
+        concreteMix(consumer, Blocks.PINK_CONCRETE, Blocks.PINK_CONCRETE_POWDER);
+        concreteMix(consumer, Blocks.GRAY_CONCRETE, Blocks.GRAY_CONCRETE_POWDER);
+        concreteMix(consumer, Blocks.LIGHT_GRAY_CONCRETE, Blocks.LIGHT_GRAY_CONCRETE_POWDER);
+        concreteMix(consumer, Blocks.CYAN_CONCRETE, Blocks.CYAN_CONCRETE_POWDER);
+        concreteMix(consumer, Blocks.PURPLE_CONCRETE, Blocks.PURPLE_CONCRETE_POWDER);
+        concreteMix(consumer, Blocks.BLUE_CONCRETE, Blocks.BLUE_CONCRETE_POWDER);
+        concreteMix(consumer, Blocks.BROWN_CONCRETE, Blocks.BROWN_CONCRETE_POWDER);
+        concreteMix(consumer, Blocks.GREEN_CONCRETE, Blocks.GREEN_CONCRETE_POWDER);
+        concreteMix(consumer, Blocks.RED_CONCRETE, Blocks.RED_CONCRETE_POWDER);
+        concreteMix(consumer, Blocks.BLACK_CONCRETE, Blocks.BLACK_CONCRETE_POWDER);   
+        
+        
         
     }
 
@@ -344,6 +365,16 @@ public class ModRecipeProvider extends RecipeProvider {
                 .pattern("X X")
                 .group("concrete_ladder")
                 .unlockedBy("has_concrete", has(ingredient))
+                .save(recipeConsumer);
+    }
+    
+    private static void concreteMix(Consumer<FinishedRecipe> recipeConsumer, ItemLike concrete, ItemLike concretePowder ) {
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, concrete, 9)
+        		.requires(concretePowder, 8)
+        		.requires(Items.WATER_BUCKET, 1)
+                .group("concrete")
+                .unlockedBy("has_concrete_powder", has(concretePowder))
+                .unlockedBy("has_water_bucket", has(Items.WATER_BUCKET))
                 .save(recipeConsumer);
     }
 }

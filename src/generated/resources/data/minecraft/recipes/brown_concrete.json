@@ -1,0 +1,38 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "group": "concrete",
+  "ingredients": [
+    {
+      "item": "minecraft:brown_concrete_powder"
+    },
+    {
+      "item": "minecraft:brown_concrete_powder"
+    },
+    {
+      "item": "minecraft:brown_concrete_powder"
+    },
+    {
+      "item": "minecraft:brown_concrete_powder"
+    },
+    {
+      "item": "minecraft:brown_concrete_powder"
+    },
+    {
+      "item": "minecraft:brown_concrete_powder"
+    },
+    {
+      "item": "minecraft:brown_concrete_powder"
+    },
+    {
+      "item": "minecraft:brown_concrete_powder"
+    },
+    {
+      "item": "minecraft:water_bucket"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "minecraft:brown_concrete"
+  }
+}

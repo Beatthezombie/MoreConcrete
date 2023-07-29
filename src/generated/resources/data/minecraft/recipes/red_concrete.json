@@ -1,0 +1,38 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "group": "concrete",
+  "ingredients": [
+    {
+      "item": "minecraft:red_concrete_powder"
+    },
+    {
+      "item": "minecraft:red_concrete_powder"
+    },
+    {
+      "item": "minecraft:red_concrete_powder"
+    },
+    {
+      "item": "minecraft:red_concrete_powder"
+    },
+    {
+      "item": "minecraft:red_concrete_powder"
+    },
+    {
+      "item": "minecraft:red_concrete_powder"
+    },
+    {
+      "item": "minecraft:red_concrete_powder"
+    },
+    {
+      "item": "minecraft:red_concrete_powder"
+    },
+    {
+      "item": "minecraft:water_bucket"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "minecraft:red_concrete"
+  }
+}
