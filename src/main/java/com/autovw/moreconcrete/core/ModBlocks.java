@@ -202,7 +202,7 @@ public class ModBlocks {
     }
 
     private static RegistryObject<Block> registerSlab(Block parent) {
-        return createRegistry(parent, "slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(parent)), new Item.Properties());
+        return createRegistry(parent, "slab", () -> new GenericSlabBlock(BlockBehaviour.Properties.copy(parent)), new Item.Properties());
     }
 
     private static RegistryObject<Block> registerStair(Block parent) {

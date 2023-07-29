@@ -14,7 +14,7 @@
                   "block": "moreconcrete:light_gray_concrete_slab",
                   "condition": "minecraft:block_state_property",
                   "properties": {
-                    "type": "double"
+                    "generic_type": "double"
                   }
                 }
               ],

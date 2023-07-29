@@ -1,13 +1,43 @@
 {
   "variants": {
-    "type=bottom": {
-      "model": "moreconcrete:block/yellow_concrete_slab"
+    "generic_type=bottom": {
+      "model": "moreconcrete:block/yellow_concrete_slab",
+      "uvlock": true,
+      "x": 180,
+      "y": 270
     },
-    "type=double": {
-      "model": "minecraft:block/yellow_concrete"
+    "generic_type=double": {
+      "model": "minecraft:block/yellow_concrete",
+      "uvlock": true,
+      "x": 90
     },
-    "type=top": {
-      "model": "moreconcrete:block/yellow_concrete_slab_top"
+    "generic_type=east": {
+      "model": "moreconcrete:block/yellow_concrete_slab",
+      "uvlock": true,
+      "x": 90,
+      "y": 90
+    },
+    "generic_type=north": {
+      "model": "moreconcrete:block/yellow_concrete_slab",
+      "uvlock": true,
+      "x": 90
+    },
+    "generic_type=south": {
+      "model": "moreconcrete:block/yellow_concrete_slab",
+      "uvlock": true,
+      "x": 90,
+      "y": 180
+    },
+    "generic_type=top": {
+      "model": "moreconcrete:block/yellow_concrete_slab",
+      "uvlock": true,
+      "y": 270
+    },
+    "generic_type=west": {
+      "model": "moreconcrete:block/yellow_concrete_slab",
+      "uvlock": true,
+      "x": 90,
+      "y": 270
     }
   }
 }

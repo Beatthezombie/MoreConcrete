@@ -2,6 +2,9 @@ package com.autovw.moreconcrete.datagen.providers;
 
 import com.autovw.moreconcrete.MoreConcrete;
 import com.autovw.moreconcrete.core.ModBlocks;
+import com.autovw.moreconcrete.core.GenericSlabBlock;
+import com.autovw.moreconcrete.core.GenericSlabType;
+
 import net.minecraft.core.Direction;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
@@ -13,10 +16,6 @@ import net.minecraftforge.client.model.generators.ConfiguredModel;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
-
-import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.block.LadderBlock;
-
 
 import java.util.Objects;
 
@@ -31,7 +30,7 @@ public class ModBlockStatesProvider extends BlockStateProvider {
     @Override
     protected void registerStatesAndModels() {
         ModBlocks.BLOCKS.getEntries().stream().map(RegistryObject::get)
-                .filter(predicate -> predicate instanceof SlabBlock)
+                .filter(predicate -> predicate instanceof GenericSlabBlock)
                 .forEach(this::slabBlock);
 
         ModBlocks.BLOCKS.getEntries().stream().map(RegistryObject::get)
@@ -65,14 +64,6 @@ public class ModBlockStatesProvider extends BlockStateProvider {
         ModBlocks.BLOCKS.getEntries().stream().map(RegistryObject::get)
         		.filter(predicate -> predicate instanceof LadderBlock)
         		.forEach(this::ladderBlock);
-    }
-
-    public void slabBlock(Block slab) {
-        String slabPath = Objects.requireNonNull(ForgeRegistries.BLOCKS.getKey(slab)).getPath();
-        String parent = slabPath.replace("_slab", "");
-        ResourceLocation txt = new ResourceLocation("block/" + parent);
-        slabBlock((SlabBlock) slab, txt, txt, txt, txt);
-        itemModels().withExistingParent(slabPath, new ResourceLocation(ForgeRegistries.BLOCKS.getKey(slab).getNamespace(), "block/" + slabPath));
     }
 
     public void stairsBlock(Block stairs) {
@@ -223,5 +214,32 @@ public class ModBlockStatesProvider extends BlockStateProvider {
 
         // item model
         itemModels().withExistingParent(path, new ResourceLocation(ForgeRegistries.BLOCKS.getKey(ladder).getNamespace(), "block/" + path));
+    }
+    
+    public void slabBlock(Block verticalSlab) {
+        String path = Objects.requireNonNull(ForgeRegistries.BLOCKS.getKey(verticalSlab)).getPath();
+        String parent = path.replace("_slab", "");
+        ResourceLocation texture = mcLoc("block/" + parent);
+        // Creates lever_model model file
+        BlockModelBuilder slabModel = models().withExistingParent(path, mcLoc("block/slab")).texture("top", texture).texture("bottom", texture).texture("side", texture);
+        
+        getVariantBuilder(verticalSlab)
+        .forAllStatesExcept(state -> {
+           GenericSlabType type = state.getValue(GenericSlabBlock.GENERIC_TYPE);
+           boolean doubleSlab = type == GenericSlabType.DOUBLE;
+           int xRot = type == GenericSlabType.BOTTOM ? 180 : type == GenericSlabType.TOP ? 0 : 90;
+           Direction dir = type == GenericSlabType.NORTH ? Direction.NORTH : type == GenericSlabType.SOUTH ? Direction.SOUTH : type == GenericSlabType.EAST ? Direction.EAST : Direction.WEST;
+           int yRot = doubleSlab ? 0 :(((int) dir.toYRot()) + 180) % 360;
+           
+           return ConfiguredModel.builder()
+                   .modelFile(doubleSlab ? models().getExistingFile(texture) : slabModel )
+                   .rotationX(xRot)
+                   .rotationY(yRot)
+                   .uvLock(true)
+                   .build();
+        }, StairBlock.WATERLOGGED);
+        
+        // item model
+        itemModels().withExistingParent(path, new ResourceLocation(ForgeRegistries.BLOCKS.getKey(verticalSlab).getNamespace(), "block/" + path));
     }
 }
