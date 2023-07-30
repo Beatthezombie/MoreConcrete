@@ -369,7 +369,7 @@ public class ModRecipeProvider extends RecipeProvider {
     }
     
     private static void concreteMix(Consumer<FinishedRecipe> recipeConsumer, ItemLike concrete, ItemLike concretePowder ) {
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, concrete, 9)
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, concrete, 8)
         		.requires(concretePowder, 8)
         		.requires(Items.WATER_BUCKET, 1)
                 .group("concrete")

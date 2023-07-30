@@ -23,7 +23,7 @@ repositories {
     maven { url "https://www.cursemaven.com" }
 }
 
-version = '1.20.1_beta_2'
+version = '1.20.1_beta_3'
 group = 'com.autovw.moreconcrete'
 archivesBaseName = 'moreconcrete'
 
