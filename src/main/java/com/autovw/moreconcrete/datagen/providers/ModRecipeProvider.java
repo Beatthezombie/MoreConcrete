@@ -23,6 +23,7 @@ public class ModRecipeProvider extends RecipeProvider {
     @Override
     protected void buildRecipes(Consumer<FinishedRecipe> consumer) {
         // Slabs
+    	/*
         concreteSlab(consumer, ModBlocks.WHITE_CONCRETE_SLAB.get(), Blocks.WHITE_CONCRETE);
         concreteSlab(consumer, ModBlocks.ORANGE_CONCRETE_SLAB.get(), Blocks.ORANGE_CONCRETE);
         concreteSlab(consumer, ModBlocks.MAGENTA_CONCRETE_SLAB.get(), Blocks.MAGENTA_CONCRETE);
@@ -93,7 +94,7 @@ public class ModRecipeProvider extends RecipeProvider {
         stonecutting(consumer, ModBlocks.RED_CONCRETE_STAIRS.get(), Ingredient.of(Blocks.RED_CONCRETE), 1, Blocks.RED_CONCRETE);
         stonecutting(consumer, ModBlocks.BLACK_CONCRETE_STAIRS.get(), Ingredient.of(Blocks.BLACK_CONCRETE), 1, Blocks.BLACK_CONCRETE);
 
-
+*/
         // Walls
         concreteWall(consumer, ModBlocks.WHITE_CONCRETE_WALL.get(), Blocks.WHITE_CONCRETE);
         concreteWall(consumer, ModBlocks.ORANGE_CONCRETE_WALL.get(), Blocks.ORANGE_CONCRETE);
@@ -265,7 +266,7 @@ public class ModRecipeProvider extends RecipeProvider {
         
         
     }
-
+/*
     private static void concreteSlab(Consumer<FinishedRecipe> recipeConsumer, ItemLike slab, ItemLike ingredient) {
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, slab, 6)
                 .define('#', ingredient)
@@ -285,7 +286,7 @@ public class ModRecipeProvider extends RecipeProvider {
                 .unlockedBy("has_concrete", has(ingredient))
                 .save(recipeConsumer);
     }
-
+*/
     private static void concreteWall(Consumer<FinishedRecipe> recipeConsumer, ItemLike wall, ItemLike ingredient) {
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, wall, 6)
                 .define('#', ingredient)

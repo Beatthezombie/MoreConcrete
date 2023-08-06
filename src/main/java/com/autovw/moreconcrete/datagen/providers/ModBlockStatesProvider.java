@@ -29,6 +29,7 @@ public class ModBlockStatesProvider extends BlockStateProvider {
 
     @Override
     protected void registerStatesAndModels() {
+    	/*
         ModBlocks.BLOCKS.getEntries().stream().map(RegistryObject::get)
                 .filter(predicate -> predicate instanceof GenericSlabBlock)
                 .forEach(this::slabBlock);
@@ -36,7 +37,7 @@ public class ModBlockStatesProvider extends BlockStateProvider {
         ModBlocks.BLOCKS.getEntries().stream().map(RegistryObject::get)
                 .filter(predicate -> predicate instanceof StairBlock)
                 .forEach(this::stairsBlock);
-
+*/
         ModBlocks.BLOCKS.getEntries().stream().map(RegistryObject::get)
                 .filter(predicate -> predicate instanceof WallBlock)
                 .forEach(this::wallBlock);

@@ -21,6 +21,7 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
 
     @Override
     protected void addTags(HolderLookup.Provider registries) {
+    	/*
         // Slabs
         tag(ModTags.MOD_SLABS)
                 .add(ModBlocks.WHITE_CONCRETE_SLAB.get())
@@ -62,7 +63,7 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
                 .add(ModBlocks.BLACK_CONCRETE_STAIRS.get());
         tag(BlockTags.MINEABLE_WITH_PICKAXE).addTag(ModTags.MOD_STAIRS);
         tag(BlockTags.STAIRS).addTag(ModTags.MOD_STAIRS);
-
+*/
         // Walls
         tag(ModTags.MOD_WALLS)
                 .add(ModBlocks.WHITE_CONCRETE_WALL.get())

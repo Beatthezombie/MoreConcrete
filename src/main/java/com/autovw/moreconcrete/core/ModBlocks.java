@@ -20,7 +20,7 @@ import java.util.function.Supplier;
 public class ModBlocks {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, MoreConcrete.MODID);
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, MoreConcrete.MODID);
-
+/*
     // Slabs
     public static final RegistryObject<Block> WHITE_CONCRETE_SLAB = registerSlab(Blocks.WHITE_CONCRETE);
     public static final RegistryObject<Block> LIGHT_GRAY_CONCRETE_SLAB = registerSlab(Blocks.LIGHT_GRAY_CONCRETE);
@@ -56,7 +56,7 @@ public class ModBlocks {
     public static final RegistryObject<Block> PURPLE_CONCRETE_STAIRS = registerStair(Blocks.PURPLE_CONCRETE);
     public static final RegistryObject<Block> MAGENTA_CONCRETE_STAIRS = registerStair(Blocks.MAGENTA_CONCRETE);
     public static final RegistryObject<Block> PINK_CONCRETE_STAIRS = registerStair(Blocks.PINK_CONCRETE);
-
+*/
     // Walls
     public static final RegistryObject<Block> WHITE_CONCRETE_WALL = registerWall(Blocks.WHITE_CONCRETE);
     public static final RegistryObject<Block> LIGHT_GRAY_CONCRETE_WALL = registerWall(Blocks.LIGHT_GRAY_CONCRETE);
